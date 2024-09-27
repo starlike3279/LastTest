@@ -21,8 +21,10 @@ public class Article {
     @Column(columnDefinition = "TEXT")
     private String content;
 
-    LocalDateTime createDate;
+    private LocalDateTime createDate;
 
     @ManyToOne
     private SiteUser author;
+
+    private LocalDateTime modifyDate;
 }
