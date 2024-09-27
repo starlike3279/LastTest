@@ -30,10 +30,11 @@ public class ArticleService {
         return this.articleRepository.findAll();
     }
 
-    public void create(String title, String content) {
+    public void create(String title, String content, SiteUser author) {
         Article a = new Article();
         a.setTitle(title);
         a.setContent(content);
+        a.setAuthor(author);
         a.setCreateDate(LocalDateTime.now());
         this.articleRepository.save(a);
     }

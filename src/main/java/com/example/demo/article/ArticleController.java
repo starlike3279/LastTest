@@ -1,9 +1,12 @@
 package com.example.demo.article;
 
+import com.example.demo.user.SiteUser;
+import com.example.demo.user.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.method.P;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +22,7 @@ import java.security.Principal;
 public class ArticleController {
 
     private final ArticleService articleService;
+    private final UserService userService;
 
     @GetMapping("/list")
     public String articleList(Model model,
@@ -37,13 +41,14 @@ public class ArticleController {
 
     @PreAuthorize("isAuthenticated()")
     @PostMapping("/create")
-    public String create(Model model, @PathVariable("id") Integer id,
+    public String create(Model model,
                          @Valid ArticleForm articleForm, BindingResult bindingResult,
                          Principal principal) {
         if (bindingResult.hasErrors()) {
             return "article_form";
         }
-        this.articleService.create(articleForm.getTitle(), articleForm.getContent());
+        SiteUser siteUser = this.userService.getUser(principal.getName());
+        this.articleService.create(articleForm.getTitle(), articleForm.getContent(), siteUser);
         return "redirect:/article/list";
     }
 

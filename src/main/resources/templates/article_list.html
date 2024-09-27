@@ -13,12 +13,11 @@
             <td th:text="${paging.getTotalElements - (paging.number * paging.size) - loop.index}"></td>
             <td class="text-start">
                 <a th:href="@{|/article/detail/${article.id}|}" th:text="${article.title}"></a>
-                <span class="text-danger small ms-2"
-                      th:if="${#lists.size(article.articleList) > 0}"
-                      th:text="${#lists.size(article.articleList)}">
-                    </span>
+
             </td>
-            <td><span th:if="${article.author != null}" th:text="${article.author.username}"></span></td>
+            <td>
+                <span th:if="${article.author != null}" th:text="${article.author.username}"></span>
+            </td>
             <td th:text="${#temporals.format(article.createDate, 'yyyy-MM-dd HH:mm')}"></td>
         </tr>
         </tbody>
