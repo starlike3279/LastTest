@@ -12,3 +12,24 @@
 - [ ] (선택)메인페이지에 검색 기능이 구현되어야 한다. input 박스에 내용을 적고 검색 버튼을 누르면 해당 문자가 포함된 게시글이 리스트업 되어야 한다.
 본인 글에 대해서만 수정 / 삭제가 가능하다.
 
+## 미비사(선택)항 or 막힌 부분
+- ...
+
+## UI/UX (화면 캡처본을 복사 붙여 넣기, url 주소 나오도록)
+- 게시글 리스트 페이지
+- ![spring1](https://github.com/user-attachments/assets/94de4056-d658-4032-bde1-8726f6bf2e60)
+
+- 게시글 등록 폼 페이지
+- ![spring3](https://github.com/user-attachments/assets/1fdf86fb-3ed6-4fe6-bfca-987ea968b9fd)
+
+- 게시글 상세 페이지
+- ![Spring4](https://github.com/user-attachments/assets/ee5704a0-35b2-41a8-99d9-bc89ec68f556)
+
+- 로그인 페이지
+- ![Spring2](https://github.com/user-attachments/assets/477044de-620a-4383-8457-ebc4b37e3c38)
+
+- 회원가입 페이지
+- ![spring5](https://github.com/user-attachments/assets/e322c5e7-f59a-4e1c-b850-27c6bc87c5d1)
+
+- 
+- (선택) 검색 페이지
